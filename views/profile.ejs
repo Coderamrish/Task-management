@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform - Indian Constitution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Dark Mode Toggle */
+        .dark-mode {
+            background-color: #1f2937;
+            color: #f9fafb;
+        }
+        .dark-mode nav, .dark-mode footer {
+            background-color: #111827;
+        }
+        .dark-mode .bg-white {
+            background-color: #374151;
+        }
+    </style>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 transition duration-500">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-900 p-4 text-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold">E-Learning Constitution</a>
+            <ul class="flex space-x-6">
+                <li><a href="/auth/profile" class="hover:text-gray-300">Profile</a></li>
+                <li><a href="/courses" class="hover:text-gray-300">Courses</a></li>
+                <li><a href="/about" class="hover:text-gray-300">About</a></li>
+                <li><a href="#faqs" class="hover:text-gray-300">FAQs</a></li>
+                <li><button onclick="toggleDarkMode()" class="bg-gray-700 py-1 px-3 rounded hover:bg-gray-600">Dark Mode</button></li>
+            </ul>
+            <form action="/auth/logout" method="POST">
+                <button class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">Logout</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section class="container mx-auto mt-12 p-8 bg-white rounded-lg shadow-lg text-center">
+        <h1 class="text-3xl font-bold mb-4">Welcome, <%= username %>!</h1>
+        <p class="text-gray-700 mb-6">You have successfully logged in to the Indian Constitution e-learning platform.</p>
+        <p class="text-gray-500">Explore the courses and learn more about the key aspects of the Indian Constitution.</p>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="container mx-auto mt-12">
+        <h2 class="text-2xl font-bold mb-6 text-center">Popular Courses</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Course Card 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-4">Legislature</h3>
+                <p class="text-gray-600">Learn about the role of the Legislature in India, including the structure of Parliament, its powers, and functions.</p>
+                <a href="/courses/legislature" class="mt-4 inline-block text-blue-500 hover:underline">Start Course</a>
+            </div>
+            <!-- Course Card 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-4">Executive</h3>
+                <p class="text-gray-600">Explore the Indian Executive, its key members (President, Prime Minister, Council of Ministers), and their roles in governance.</p>
+                <a href="/courses/executive" class="mt-4 inline-block text-blue-500 hover:underline">Start Course</a>
+            </div>
+            <!-- Course Card 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-4">Judiciary</h3>
+                <p class="text-gray-600">Understand the Indian Judiciary system, including the Supreme Court, High Courts, and their jurisdiction.</p>
+                <a href="/courses/judiciary" class="mt-4 inline-block text-blue-500 hover:underline">Start Course</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="container mx-auto mt-16 bg-gray-50 p-8 rounded-lg shadow-lg text-center">
+        <h2 class="text-2xl font-bold mb-6">What Our Learners Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <p class="italic text-gray-700">"This platform made understanding the Indian Constitution so much easier and engaging!"</p>
+                <p class="mt-4 font-bold">- Rajesh Kumar</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <p class="italic text-gray-700">"The interactive courses really helped me grasp complex concepts of the Judiciary."</p>
+                <p class="mt-4 font-bold">- Priya Desai</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <p class="italic text-gray-700">"I love the course structure and the way information is presented."</p>
+                <p class="mt-4 font-bold">- Amit Singh</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faqs" class="container mx-auto mt-16 bg-gray-50 p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg">What is the Indian Constitution?</h3>
+                <p class="text-gray-600 mt-2">The Constitution of India is the supreme law of India, laying out the framework that defines the political principles, establishes the structure, procedures, powers, and duties of government institutions, and sets out fundamental rights and duties of citizens.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg">What are the key organs of the Constitution?</h3>
+                <p class="text-gray-600 mt-2">The Indian Constitution establishes three key organs: the Legislature, the Executive, and the Judiciary, each playing crucial roles in governance.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold text-lg">How do I enroll in courses?</h3>
+                <p class="text-gray-600 mt-2">Simply visit the courses section, select the topic you are interested in, and start learning. Our platform provides video lectures, quizzes, and materials for a comprehensive understanding of the Indian Constitution.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white mt-12">
+        <div class="container mx-auto py-6">
+            <div class="flex justify-between items-center">
+                <p>&copy; 2024 E-Learning Constitution. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="https://www.facebook.com" target="_blank" class="hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" class="hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
